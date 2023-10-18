@@ -5,4 +5,4 @@ A partir dos dados públicos disponibilizados pela prefeitura foi realizado uma 
 
 #Modelo Entidade Relacionamento
 
-![alt text](https://github.com/LvWitt/banco-de-dados-central156/blob/main/Modelo Entidade Relacionamento Central156.png?raw=true)
+![alt text](https://github.com/LvWitt/banco-de-dados-central156/blob/main/Modelo%20Entidade%20Relacionamento%20Central156.png)
