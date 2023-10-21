@@ -31,17 +31,17 @@ G5_LINHAS_ONIBUS (id ponto, linha de onibus) sendo id_ponto a chave estrangeira
 
 # Fecho (F+ - Conjunto de dependencias funcionais)
 
-Fecho = {{id_bairro} -> {nome_bairro, regional, longitude, latitude, numero_populacao, renda_media},
-{id_terminal} -> {nome_terminal, regional, complemento, tipo, rua, numero,  bairro},
-{id_terminal, linhas terminal} -> {},
-{id_terminal, telefone terminal} -> {},
-{id_semaforo} -> {solicitacao, orgao_responsavel, data, unidade_regional, estado_ atual, rua, numero, bairro},
-{id_hospital} -> {regional, tipo servico, rua, numero, bairro, nome_hospital},
-{id_hospital, numero_hospital} -> {},
-{id_escola} -> {nome_escola, dependencia_adm, regional, rua, bairro, numero},
-{id_escola, numero_escola} -> {},
-{id_cei} -> {regional, modalidade, dependencia_adm, nome cei, rua, numero, bairro},
-{id_cei, telefone cei} -> {},
-{id_ponto} -> {nome_ponto, regional, rua, bairro, numero},
-{id_ponto, linha_de_onibus} -> {}}
+Fecho = {{id_bairro} -> {nome_bairro, regional, longitude, latitude, numero_populacao, renda_media},<br>
+{id_terminal} -> {nome_terminal, regional, complemento, tipo, rua, numero,  bairro},<br>
+{id_terminal, linhas terminal} -> {},<br>
+{id_terminal, telefone terminal} -> {},<br>
+{id_semaforo} -> {solicitacao, orgao_responsavel, data, unidade_regional, estado_ atual, rua, numero, bairro},<br>
+{id_hospital} -> {regional, tipo servico, rua, numero, bairro, nome_hospital},<br>
+{id_hospital, numero_hospital} -> {},<br>
+{id_escola} -> {nome_escola, dependencia_adm, regional, rua, bairro, numero},<br>
+{id_escola, numero_escola} -> {},<br>
+{id_cei} -> {regional, modalidade, dependencia_adm, nome cei, rua, numero, bairro},<br>
+{id_cei, telefone cei} -> {},<br>
+{id_ponto} -> {nome_ponto, regional, rua, bairro, numero},<br>
+{id_ponto, linha_de_onibus} -> {}}<br>
 
