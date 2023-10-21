@@ -31,7 +31,8 @@ G5_LINHAS_ONIBUS (id ponto, linha de onibus) sendo id_ponto a chave estrangeira
 
 # Fecho (F+ - Conjunto de dependencias funcionais)
 
-Fecho = {{id_bairro} -> {nome_bairro, regional, longitude, latitude, numero_populacao, renda_media},<br>
+Fecho = {
+{id_bairro} -> {nome_bairro, regional, longitude, latitude, numero_populacao, renda_media},<br><br>
 {id_terminal} -> {nome_terminal, regional, complemento, tipo, rua, numero,  bairro},<br>
 {id_terminal, linhas terminal} -> {},<br>
 {id_terminal, telefone terminal} -> {},<br><br>
@@ -43,5 +44,6 @@ Fecho = {{id_bairro} -> {nome_bairro, regional, longitude, latitude, numero_popu
 {id_cei} -> {regional, modalidade, dependencia_adm, nome cei, rua, numero, bairro},<br>
 {id_cei, telefone cei} -> {},<br><br>
 {id_ponto} -> {nome_ponto, regional, rua, bairro, numero},<br>
-{id_ponto, linha_de_onibus} -> {}}<br>
+{id_ponto, linha_de_onibus} -> {}<br>
+}
 
