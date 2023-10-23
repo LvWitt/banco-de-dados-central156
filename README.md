@@ -29,7 +29,7 @@ G5_TELEFONE_CEI (id cei, telefone cei) sendo id_cei a chave estrangeira
 G5_PONTO_DE_ONIBUS_CANALETA (id ponto, nome_ponto, regional, rua, bairro, numero, id_bairro)
 G5_LINHAS_ONIBUS (id ponto, linha de onibus) sendo id_ponto a chave estrangeira
 
-# Fecho (F+ - Conjunto de dependencias funcionais)
+# Fecho (F+ Conjunto de dependencias funcionais)
 
 Fecho = {
 {id_bairro} -> {nome_bairro, regional, longitude, latitude, numero_populacao, renda_media},<br><br>
