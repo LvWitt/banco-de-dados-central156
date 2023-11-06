@@ -47,12 +47,38 @@ Fecho = {
 {id_ponto, linha_de_onibus} -> {}<br>
 }
 
-# Questões possíveis de se resolver com este modelo de banco de dados
+# Questões que este modelo de banco de dados soluciona
 <br>
-Questões hipotéticas 
-1 - Quais bairros possuem renda superior a renda média de sua regional e qual é o número de população deles?
-2 - Quais bairros com escola que possuem mais de um hospital?
-3 - Quais bairros com ao menos 2 Centros de Educação Infantil têm semáforos reportados?
-4 - Qual a renda média nominal dos bairros que registraram reclamação de semáforo?
-5 - Quais bairros não reportaram nenhum semáforo e também não possui terminal?
+Questões hipotéticas <br>
+1 - Quais bairros possuem renda superior a renda média de sua regional e qual é o número de população deles?<br>
+SELECT b1.nome_bairro, b1.numero_populacao, b1.regional
+FROM G5_BAIRRO_CIDADE b1
+WHERE renda_media > (SELECT AVG(b2.renda_media) FROM G5_BAIRRO_CIDADE b2 WHERE b1.regional=b2.regional)
+<br>
+2 - Quais bairros com escola que possuem mais de um hospital?<br>
+SELECT B.nome_bairro
+FROM G5_BAIRRO_CIDADE B
+WHERE B.id_bairro IN (
+    SELECT H.id_bairro
+    FROM G5_HOSPITAL H
+    GROUP BY H.id_bairro
+    HAVING COUNT(H.id_hospital) > 1
+) AND B.id_bairro IN (
+    SELECT E.bairro_id
+    FROM G5_ESCOLA E
+)<br>
+3 - Quais bairros com ao menos 2 Centros de Educação Infantil têm semáforos reportados?<br>
+SELECT B.nome_bairro
+FROM G5_BAIRRO_CIDADE B
+WHERE B.id_bairro IN (
+	SELECT C.id_bairro
+	FROM G5_CENTRO_EDUCACAO_INFANTIL C
+	GROUP BY C.id_bairro
+	HAVING COUNT(C.id_cei) > 1
+) AND B.id_bairro IN (
+	SELECT S.id_bairro
+	FROM G5_SEMAFORO S
+)<br>
+4 - Qual a renda média nominal dos bairros que registraram reclamação de semáforo?<br>
+5 - Quais bairros não reportaram nenhum semáforo e também não possui terminal?<br>
 
