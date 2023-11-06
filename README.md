@@ -47,3 +47,12 @@ Fecho = {
 {id_ponto, linha_de_onibus} -> {}<br>
 }
 
+# Questões possíveis de se resolver com este modelo de banco de dados
+<br>
+Questões hipotéticas 
+1 - Quais bairros possuem renda superior a renda média de sua regional e qual é o número de população deles?
+2 - Quais bairros com escola que possuem mais de um hospital?
+3 - Quais bairros com ao menos 2 Centros de Educação Infantil têm semáforos reportados?
+4 - Qual a renda média nominal dos bairros que registraram reclamação de semáforo?
+5 - Quais bairros não reportaram nenhum semáforo e também não possui terminal?
+
