@@ -51,33 +51,33 @@ Fecho = {
 <br>
 Questões hipotéticas <br>
 1 - Quais bairros possuem renda superior a renda média de sua regional e qual é o número de população deles?<br>
-SELECT b1.nome_bairro, b1.numero_populacao, b1.regional
-FROM G5_BAIRRO_CIDADE b1
-WHERE renda_media > (SELECT AVG(b2.renda_media) FROM G5_BAIRRO_CIDADE b2 WHERE b1.regional=b2.regional)
+SELECT b1.nome_bairro, b1.numero_populacao, b1.regional<br>
+FROM G5_BAIRRO_CIDADE b1<br>
+WHERE renda_media > (SELECT AVG(b2.renda_media) FROM G5_BAIRRO_CIDADE b2 WHERE b1.regional=b2.regional)<br>
 <br>
 2 - Quais bairros com escola que possuem mais de um hospital?<br>
-SELECT B.nome_bairro
-FROM G5_BAIRRO_CIDADE B
-WHERE B.id_bairro IN (
-    SELECT H.id_bairro
-    FROM G5_HOSPITAL H
-    GROUP BY H.id_bairro
-    HAVING COUNT(H.id_hospital) > 1
-) AND B.id_bairro IN (
-    SELECT E.bairro_id
-    FROM G5_ESCOLA E
+SELECT B.nome_bairro<br>
+FROM G5_BAIRRO_CIDADE B<br>
+WHERE B.id_bairro IN (<br>
+    SELECT H.id_bairro<br>
+    FROM G5_HOSPITAL H<br>
+    GROUP BY H.id_bairro<br>
+    HAVING COUNT(H.id_hospital) > 1<br>
+) AND B.id_bairro IN (<br>
+    SELECT E.bairro_id<br>
+    FROM G5_ESCOLA E<br>
 )<br>
 3 - Quais bairros com ao menos 2 Centros de Educação Infantil têm semáforos reportados?<br>
-SELECT B.nome_bairro
-FROM G5_BAIRRO_CIDADE B
-WHERE B.id_bairro IN (
-	SELECT C.id_bairro
-	FROM G5_CENTRO_EDUCACAO_INFANTIL C
-	GROUP BY C.id_bairro
-	HAVING COUNT(C.id_cei) > 1
-) AND B.id_bairro IN (
-	SELECT S.id_bairro
-	FROM G5_SEMAFORO S
+SELECT B.nome_bairro<br>
+FROM G5_BAIRRO_CIDADE B<br>
+WHERE B.id_bairro IN (<br>
+	SELECT C.id_bairro<br>
+	FROM G5_CENTRO_EDUCACAO_INFANTIL C<br>
+	GROUP BY C.id_bairro<br>
+	HAVING COUNT(C.id_cei) > 1<br>
+) AND B.id_bairro IN (<br>
+	SELECT S.id_bairro<br>
+	FROM G5_SEMAFORO S<br>
 )<br>
 4 - Qual a renda média nominal dos bairros que registraram reclamação de semáforo?<br>
 5 - Quais bairros não reportaram nenhum semáforo e também não possui terminal?<br>
