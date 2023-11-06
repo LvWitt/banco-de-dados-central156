@@ -56,17 +56,16 @@ FROM G5_BAIRRO_CIDADE b1<br>
 WHERE renda_media > (SELECT AVG(b2.renda_media) FROM G5_BAIRRO_CIDADE b2 WHERE b1.regional=b2.regional)<br>
 <br>
 2 - Quais bairros com escola que possuem mais de um hospital?<br>
-SELECT B.nome_bairro<br>
-FROM G5_BAIRRO_CIDADE B<br>
-WHERE B.id_bairro IN (<br>
-    SELECT H.id_bairro<br>
-    FROM G5_HOSPITAL H<br>
-    GROUP BY H.id_bairro<br>
-    HAVING COUNT(H.id_hospital) > 1<br>
-) AND B.id_bairro IN (<br>
-    SELECT E.bairro_id<br>
-    FROM G5_ESCOLA E<br>
-)<br>
+	SELECT B.nome_bairro<br>
+	FROM G5_BAIRRO_CIDADE B<br>
+	WHERE B.id_bairro IN (<br>
+	    SELECT H.id_bairro<br>
+	    FROM G5_HOSPITAL H<br>
+	    GROUP BY H.id_bairro<br>
+	    HAVING COUNT(H.id_hospital) > 1)<br>
+     	AND B.id_bairro IN (<br>
+	    SELECT E.bairro_id<br>
+	    FROM G5_ESCOLA E)<br>
 3 - Quais bairros com ao menos 2 Centros de Educação Infantil têm semáforos reportados?<br>
 SELECT B.nome_bairro<br>
 FROM G5_BAIRRO_CIDADE B<br>
